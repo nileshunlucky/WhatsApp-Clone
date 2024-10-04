@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 
-const Cart = () => {
+const Chat = () => {
   const chatBoxRef = useRef(null);
   const [socketio, setSocketio] = useState(null);
 
@@ -41,6 +41,7 @@ const Cart = () => {
       input.value = '';
     }
   }
+  const audio = new Audio('msgTone.mp3')
 
   const append = (message, position) => {
     if (chatBoxRef.current) {
@@ -49,6 +50,9 @@ const Cart = () => {
       newMsg.classList.add('chatMsg', position);
       chatBoxRef.current.appendChild(newMsg);
       chatBoxRef.current.scrollTop = chatBoxRef.current.scrollHeight;
+      if(position == 'left'){
+        audio.play()
+      }
     }
   };
 
@@ -80,4 +84,4 @@ const Cart = () => {
   );
 };
 
-export default Cart;
+export default Chat;

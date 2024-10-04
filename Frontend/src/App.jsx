@@ -1,5 +1,5 @@
 import './App.css'
-import Cart from './Cart'
+import Chat from './Chat'
 import Navbar from './Navbar'
 
 function App() {
@@ -7,7 +7,7 @@ function App() {
   return (
     <>
     <Navbar/>
-    <Cart/>
+    <Chat/>
     </>
   )
 }
